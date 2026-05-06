@@ -1,5 +1,4 @@
 import React, { type JSX } from "react";
-import { DotPattern } from "@/components/magicui/dot-pattern";
 import { NavbarLayout } from "./block-layouts";
 
 export interface BlockCategory {
@@ -8,7 +7,9 @@ export interface BlockCategory {
 }
 
 export interface BlockPrimitiveVariant {
-  component: React.LazyExoticComponent<() => JSX.Element | Promise<JSX.Element>>;
+  component: React.LazyExoticComponent<
+    () => JSX.Element | Promise<JSX.Element>
+  >;
   files: { path: string }[];
 }
 
@@ -157,9 +158,9 @@ export const categories = {
 
 const FooterLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="relative flex h-full min-h-screen w-full items-end bg-muted/30">
-      <DotPattern className="opacity-50" cx={15} height={24} width={24} />
-      <div className="relative z-10 grow">{children}</div>
+    <div className="relative flex size-full min-h-screen flex-col">
+      <div className="grow bg-muted/50" />
+      {children}
     </div>
   );
 };
@@ -216,26 +217,26 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/hero-03/components/hero")
         ),
         files: [
-      { path: "components/hero.tsx" },
-      { path: "components/gradient-text.tsx" },
-      { path: "components/navbar.tsx" },
-      { path: "components/logo.tsx" },
-      { path: "components/nav-menu.tsx" },
-      { path: "components/navigation-sheet.tsx" },
-    ]
+          { path: "components/hero.tsx" },
+          { path: "components/gradient-text.tsx" },
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+          { path: "components/nav-menu.tsx" },
+          { path: "components/navigation-sheet.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/hero-03/components/hero")
         ),
         files: [
-      { path: "components/hero.tsx" },
-      { path: "components/gradient-text.tsx" },
-      { path: "components/navbar.tsx" },
-      { path: "components/logo.tsx" },
-      { path: "components/nav-menu.tsx" },
-      { path: "components/navigation-sheet.tsx" },
-    ]
+          { path: "components/hero.tsx" },
+          { path: "components/gradient-text.tsx" },
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+          { path: "components/nav-menu.tsx" },
+          { path: "components/navigation-sheet.tsx" },
+        ],
       },
     },
     categories: [categories.hero],
@@ -346,22 +347,22 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/hero-08/components/hero")
         ),
         files: [
-      { path: "components/hero.tsx" },
-      { path: "components/logos.tsx" },
-      { path: "components/navbar.tsx" },
-      { path: "components/nav-menu.tsx" },
-    ]
+          { path: "components/hero.tsx" },
+          { path: "components/logos.tsx" },
+          { path: "components/navbar.tsx" },
+          { path: "components/nav-menu.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/hero-08/components/hero")
         ),
         files: [
-      { path: "components/hero.tsx" },
-      { path: "components/logos.tsx" },
-      { path: "components/navbar.tsx" },
-      { path: "components/nav-menu.tsx" },
-    ]
+          { path: "components/hero.tsx" },
+          { path: "components/logos.tsx" },
+          { path: "components/navbar.tsx" },
+          { path: "components/nav-menu.tsx" },
+        ],
       },
     },
     categories: [categories.hero],
@@ -393,7 +394,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/features-03/components/features")
+          () =>
+            import("@/registry/blocks/radix/features-03/components/features")
         ),
         files: [{ path: "components/features.tsx" }],
       },
@@ -413,15 +415,16 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/features-04/components/features")
+          () =>
+            import("@/registry/blocks/radix/features-04/components/features")
         ),
-        files: [{ path: "components/features.tsx" }]
+        files: [{ path: "components/features.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/features-04/components/features")
         ),
-        files: [{ path: "components/features.tsx" }]
+        files: [{ path: "components/features.tsx" }],
       },
     },
     categories: [categories.features],
@@ -433,7 +436,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/features-05/components/features")
+          () =>
+            import("@/registry/blocks/radix/features-05/components/features")
         ),
         files: [{ path: "components/features.tsx" }],
       },
@@ -493,7 +497,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/features-10/components/features")
+          () =>
+            import("@/registry/blocks/radix/features-10/components/features")
         ),
         files: [
           { path: "components/features.tsx" },
@@ -519,7 +524,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/features-11/components/features")
+          () =>
+            import("@/registry/blocks/radix/features-11/components/features")
         ),
         files: [{ path: "components/features.tsx" }],
       },
@@ -539,7 +545,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/features-12/components/features")
+          () =>
+            import("@/registry/blocks/radix/features-12/components/features")
         ),
         files: [{ path: "components/features.tsx" }],
       },
@@ -569,7 +576,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/features-14/components/features")
+          () =>
+            import("@/registry/blocks/radix/features-14/components/features")
         ),
         files: [{ path: "components/features.tsx" }],
       },
@@ -609,7 +617,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/features-17/components/features")
+          () =>
+            import("@/registry/blocks/radix/features-17/components/features")
         ),
         files: [{ path: "components/features.tsx" }],
       },
@@ -629,7 +638,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/features-18/components/features")
+          () =>
+            import("@/registry/blocks/radix/features-18/components/features")
         ),
         files: [{ path: "components/features.tsx" }],
       },
@@ -650,13 +660,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/integrations-01/components/integrations")
+          () =>
+            import(
+              "@/registry/blocks/radix/integrations-01/components/integrations"
+            )
         ),
         files: [{ path: "components/integrations.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/integrations-01/components/integrations")
+          () =>
+            import(
+              "@/registry/blocks/base/integrations-01/components/integrations"
+            )
         ),
         files: [{ path: "components/integrations.tsx" }],
       },
@@ -670,13 +686,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/integrations-02/components/integrations")
+          () =>
+            import(
+              "@/registry/blocks/radix/integrations-02/components/integrations"
+            )
         ),
         files: [{ path: "components/integrations.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/integrations-02/components/integrations")
+          () =>
+            import(
+              "@/registry/blocks/base/integrations-02/components/integrations"
+            )
         ),
         files: [{ path: "components/integrations.tsx" }],
       },
@@ -690,13 +712,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/integrations-03/components/integrations")
+          () =>
+            import(
+              "@/registry/blocks/radix/integrations-03/components/integrations"
+            )
         ),
         files: [{ path: "components/integrations.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/integrations-03/components/integrations")
+          () =>
+            import(
+              "@/registry/blocks/base/integrations-03/components/integrations"
+            )
         ),
         files: [{ path: "components/integrations.tsx" }],
       },
@@ -708,7 +736,10 @@ export const blocks: RegistryBlock[] = [
     title: "Integrations 04",
     description: "A simple integrations block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/integrations-04/components/integrations")
+      () =>
+        import(
+          "@/registry/blocks/shared/integrations-04/components/integrations"
+        )
     ),
     categories: [categories.integrations],
     files: [{ path: "components/integrations.tsx" }],
@@ -718,7 +749,10 @@ export const blocks: RegistryBlock[] = [
     title: "Integrations 05",
     description: "A simple integrations block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/integrations-05/components/integrations")
+      () =>
+        import(
+          "@/registry/blocks/shared/integrations-05/components/integrations"
+        )
     ),
     categories: [categories.integrations],
     files: [{ path: "components/integrations.tsx" }],
@@ -904,13 +938,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/pricing-01/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/pricing-01/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
     },
     categories: [categories.pricing],
@@ -924,13 +958,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/pricing-02/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/pricing-02/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
     },
     categories: [categories.pricing],
@@ -944,13 +978,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/pricing-03/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/pricing-03/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
     },
     categories: [categories.pricing],
@@ -964,13 +998,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/pricing-04/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/pricing-04/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
     },
     categories: [categories.pricing],
@@ -984,13 +1018,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/pricing-05/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/pricing-05/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
     },
     categories: [categories.pricing],
@@ -1004,13 +1038,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/pricing-06/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/pricing-06/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
     },
     categories: [categories.pricing],
@@ -1024,13 +1058,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/pricing-07/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/pricing-07/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
     },
     categories: [categories.pricing],
@@ -1044,13 +1078,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/pricing-08/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/pricing-08/components/pricing")
         ),
-        files: [{ path: "components/pricing.tsx" }]
+        files: [{ path: "components/pricing.tsx" }],
       },
     },
     categories: [categories.pricing],
@@ -1252,13 +1286,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/faq-01/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/faq-01/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
     },
     categories: [categories.faq],
@@ -1272,13 +1306,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/faq-02/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/faq-02/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
     },
     categories: [categories.faq],
@@ -1292,13 +1326,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/faq-03/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/faq-03/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
     },
     categories: [categories.faq],
@@ -1332,13 +1366,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/faq-06/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/faq-06/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
     },
     categories: [categories.faq],
@@ -1352,13 +1386,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/faq-07/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/faq-07/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
     },
     categories: [categories.faq],
@@ -1372,13 +1406,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/faq-08/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/faq-08/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
     },
     categories: [categories.faq],
@@ -1392,13 +1426,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/faq-09/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/faq-09/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
     },
     categories: [categories.faq],
@@ -1412,13 +1446,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/faq-10/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/faq-10/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
     },
     categories: [categories.faq],
@@ -1432,13 +1466,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/faq-11/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/faq-11/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
     },
     categories: [categories.faq],
@@ -1472,13 +1506,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/faq-14/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/faq-14/components/faq")
         ),
-        files: [{ path: "components/faq.tsx" }]
+        files: [{ path: "components/faq.tsx" }],
       },
     },
     categories: [categories.faq],
@@ -1491,15 +1525,21 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/testimonials-01/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/radix/testimonials-01/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/testimonials-01/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/base/testimonials-01/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
     },
     categories: [categories.testimonials],
@@ -1511,15 +1551,21 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/testimonials-02/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/radix/testimonials-02/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/testimonials-02/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/base/testimonials-02/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
     },
     categories: [categories.testimonials],
@@ -1531,15 +1577,21 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/testimonials-03/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/radix/testimonials-03/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/testimonials-03/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/base/testimonials-03/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
     },
     categories: [categories.testimonials],
@@ -1551,21 +1603,27 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/testimonials-04/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/radix/testimonials-04/components/testimonials"
+            )
         ),
         files: [
-      { path: "components/testimonials.tsx" },
-      { path: "components/ui/marquee.tsx" },
-    ]
+          { path: "components/testimonials.tsx" },
+          { path: "components/ui/marquee.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/testimonials-04/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/base/testimonials-04/components/testimonials"
+            )
         ),
         files: [
-      { path: "components/testimonials.tsx" },
-      { path: "components/ui/marquee.tsx" },
-    ]
+          { path: "components/testimonials.tsx" },
+          { path: "components/ui/marquee.tsx" },
+        ],
       },
     },
     categories: [categories.testimonials],
@@ -1577,15 +1635,21 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/testimonials-05/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/radix/testimonials-05/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/testimonials-05/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/base/testimonials-05/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
     },
     categories: [categories.testimonials],
@@ -1597,15 +1661,21 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/testimonials-06/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/radix/testimonials-06/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/testimonials-06/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/base/testimonials-06/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
     },
     categories: [categories.testimonials],
@@ -1617,15 +1687,21 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/testimonials-07/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/radix/testimonials-07/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/testimonials-07/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/base/testimonials-07/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
     },
     categories: [categories.testimonials],
@@ -1637,15 +1713,21 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/testimonials-08/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/radix/testimonials-08/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/testimonials-08/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/base/testimonials-08/components/testimonials"
+            )
         ),
-        files: [{ path: "components/testimonials.tsx" }]
+        files: [{ path: "components/testimonials.tsx" }],
       },
     },
     categories: [categories.testimonials],
@@ -1655,7 +1737,10 @@ export const blocks: RegistryBlock[] = [
     title: "Testimonials 09",
     description: "A simple testimonials block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/testimonials-09/components/testimonials")
+      () =>
+        import(
+          "@/registry/blocks/shared/testimonials-09/components/testimonials"
+        )
     ),
     categories: [categories.testimonials],
     files: [{ path: "components/testimonials.tsx" }],
@@ -1665,7 +1750,10 @@ export const blocks: RegistryBlock[] = [
     title: "Testimonials 10",
     description: "A simple testimonials block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/testimonials-10/components/testimonials")
+      () =>
+        import(
+          "@/registry/blocks/shared/testimonials-10/components/testimonials"
+        )
     ),
     categories: [categories.testimonials],
     files: [{ path: "components/testimonials.tsx" }],
@@ -1677,13 +1765,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/testimonials-11/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/radix/testimonials-11/components/testimonials"
+            )
         ),
         files: [{ path: "components/testimonials.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/testimonials-11/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/base/testimonials-11/components/testimonials"
+            )
         ),
         files: [{ path: "components/testimonials.tsx" }],
       },
@@ -1695,7 +1789,10 @@ export const blocks: RegistryBlock[] = [
     title: "Testimonials 12",
     description: "A simple testimonials block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/testimonials-12/components/testimonials")
+      () =>
+        import(
+          "@/registry/blocks/shared/testimonials-12/components/testimonials"
+        )
     ),
     categories: [categories.testimonials],
     files: [{ path: "components/testimonials.tsx" }],
@@ -1707,21 +1804,27 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/testimonials-13/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/radix/testimonials-13/components/testimonials"
+            )
         ),
         files: [
-      { path: "components/testimonials.tsx" },
-      { path: "components/ui/marquee.tsx" },
-    ]
+          { path: "components/testimonials.tsx" },
+          { path: "components/ui/marquee.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/testimonials-13/components/testimonials")
+          () =>
+            import(
+              "@/registry/blocks/base/testimonials-13/components/testimonials"
+            )
         ),
         files: [
-      { path: "components/testimonials.tsx" },
-      { path: "components/ui/marquee.tsx" },
-    ]
+          { path: "components/testimonials.tsx" },
+          { path: "components/ui/marquee.tsx" },
+        ],
       },
     },
     categories: [categories.testimonials],
@@ -1736,13 +1839,19 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/login-01/components/login")
         ),
-        files: [{ path: "components/login.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/login.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/login-01/components/login")
         ),
-        files: [{ path: "components/login.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/login.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.login, categories.authentication],
@@ -1756,13 +1865,19 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/login-02/components/login")
         ),
-        files: [{ path: "components/login.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/login.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/login-02/components/login")
         ),
-        files: [{ path: "components/login.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/login.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.login, categories.authentication],
@@ -1776,13 +1891,19 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/login-03/components/login")
         ),
-        files: [{ path: "components/login.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/login.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/login-03/components/login")
         ),
-        files: [{ path: "components/login.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/login.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.login, categories.authentication],
@@ -1796,13 +1917,19 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/login-04/components/login")
         ),
-        files: [{ path: "components/login.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/login.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/login-04/components/login")
         ),
-        files: [{ path: "components/login.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/login.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.login, categories.authentication],
@@ -1816,13 +1943,19 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/login-05/components/login")
         ),
-        files: [{ path: "components/login.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/login.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/login-05/components/login")
         ),
-        files: [{ path: "components/login.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/login.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.login, categories.authentication],
@@ -1837,22 +1970,22 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/login-06/components/login")
         ),
         files: [
-      { path: "components/login.tsx" },
-      { path: "components/login-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/login.tsx" },
+          { path: "components/login-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/login-06/components/login")
         ),
         files: [
-      { path: "components/login.tsx" },
-      { path: "components/login-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/login.tsx" },
+          { path: "components/login-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.login, categories.authentication],
@@ -1867,24 +2000,24 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/login-07/components/login")
         ),
         files: [
-      { path: "components/login.tsx" },
-      { path: "components/login-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/testimonials.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/login.tsx" },
+          { path: "components/login-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/testimonials.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/login-07/components/login")
         ),
         files: [
-      { path: "components/login.tsx" },
-      { path: "components/login-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/testimonials.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/login.tsx" },
+          { path: "components/login-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/testimonials.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.login, categories.authentication],
@@ -1899,22 +2032,22 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/login-08/components/login")
         ),
         files: [
-      { path: "components/login.tsx" },
-      { path: "components/login-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/login.tsx" },
+          { path: "components/login-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/login-08/components/login")
         ),
         files: [
-      { path: "components/login.tsx" },
-      { path: "components/login-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/login.tsx" },
+          { path: "components/login-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.login, categories.authentication],
@@ -1929,13 +2062,19 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/signup-01/components/signup")
         ),
-        files: [{ path: "components/signup.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/signup.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/signup-01/components/signup")
         ),
-        files: [{ path: "components/signup.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/signup.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.signup, categories.authentication],
@@ -1949,13 +2088,19 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/signup-02/components/signup")
         ),
-        files: [{ path: "components/signup.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/signup.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/signup-02/components/signup")
         ),
-        files: [{ path: "components/signup.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/signup.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.signup, categories.authentication],
@@ -1969,13 +2114,19 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/signup-03/components/signup")
         ),
-        files: [{ path: "components/signup.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/signup.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/signup-03/components/signup")
         ),
-        files: [{ path: "components/signup.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/signup.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.signup, categories.authentication],
@@ -1989,13 +2140,19 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/signup-04/components/signup")
         ),
-        files: [{ path: "components/signup.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/signup.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/signup-04/components/signup")
         ),
-        files: [{ path: "components/signup.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/signup.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.signup, categories.authentication],
@@ -2009,13 +2166,19 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/signup-05/components/signup")
         ),
-        files: [{ path: "components/signup.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/signup.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/signup-05/components/signup")
         ),
-        files: [{ path: "components/signup.tsx" }, { path: "components/logo.tsx" }]
+        files: [
+          { path: "components/signup.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.signup, categories.authentication],
@@ -2030,22 +2193,22 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/signup-06/components/signup")
         ),
         files: [
-      { path: "components/signup.tsx" },
-      { path: "components/signup-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/signup.tsx" },
+          { path: "components/signup-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/signup-06/components/signup")
         ),
         files: [
-      { path: "components/signup.tsx" },
-      { path: "components/signup-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/signup.tsx" },
+          { path: "components/signup-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.signup, categories.authentication],
@@ -2060,24 +2223,24 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/signup-07/components/signup")
         ),
         files: [
-      { path: "components/signup.tsx" },
-      { path: "components/signup-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/testimonials.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/signup.tsx" },
+          { path: "components/signup-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/testimonials.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/signup-07/components/signup")
         ),
         files: [
-      { path: "components/signup.tsx" },
-      { path: "components/signup-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/testimonials.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/signup.tsx" },
+          { path: "components/signup-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/testimonials.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.signup, categories.authentication],
@@ -2092,22 +2255,22 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/signup-08/components/signup")
         ),
         files: [
-      { path: "components/signup.tsx" },
-      { path: "components/signup-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/signup.tsx" },
+          { path: "components/signup-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/signup-08/components/signup")
         ),
         files: [
-      { path: "components/signup.tsx" },
-      { path: "components/signup-form.tsx" },
-      { path: "components/icons.tsx" },
-      { path: "components/logo.tsx" },
-    ]
+          { path: "components/signup.tsx" },
+          { path: "components/signup-form.tsx" },
+          { path: "components/icons.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     categories: [categories.signup, categories.authentication],
@@ -2123,22 +2286,22 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/navbar-01/components/navbar")
         ),
         files: [
-      { path: "components/navbar.tsx" },
-      { path: "components/logo.tsx" },
-      { path: "components/nav-menu.tsx" },
-      { path: "components/navigation-sheet.tsx" },
-    ]
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+          { path: "components/nav-menu.tsx" },
+          { path: "components/navigation-sheet.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/navbar-01/components/navbar")
         ),
         files: [
-      { path: "components/navbar.tsx" },
-      { path: "components/logo.tsx" },
-      { path: "components/nav-menu.tsx" },
-      { path: "components/navigation-sheet.tsx" },
-    ]
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+          { path: "components/nav-menu.tsx" },
+          { path: "components/navigation-sheet.tsx" },
+        ],
       },
     },
     layout: NavbarLayout,
@@ -2154,22 +2317,22 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/navbar-02/components/navbar")
         ),
         files: [
-      { path: "components/navbar.tsx" },
-      { path: "components/logo.tsx" },
-      { path: "components/nav-menu.tsx" },
-      { path: "components/navigation-sheet.tsx" },
-    ]
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+          { path: "components/nav-menu.tsx" },
+          { path: "components/navigation-sheet.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/navbar-02/components/navbar")
         ),
         files: [
-      { path: "components/navbar.tsx" },
-      { path: "components/logo.tsx" },
-      { path: "components/nav-menu.tsx" },
-      { path: "components/navigation-sheet.tsx" },
-    ]
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+          { path: "components/nav-menu.tsx" },
+          { path: "components/navigation-sheet.tsx" },
+        ],
       },
     },
     layout: NavbarLayout,
@@ -2185,24 +2348,24 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/navbar-03/components/navbar")
         ),
         files: [
-      { path: "components/navbar.tsx" },
-      { path: "components/logo.tsx" },
-      { path: "components/nav-menu.tsx" },
-      { path: "components/navigation-sheet.tsx" },
-      { path: "config/navbar.ts" },
-    ]
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+          { path: "components/nav-menu.tsx" },
+          { path: "components/navigation-sheet.tsx" },
+          { path: "config/navbar.ts" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/navbar-03/components/navbar")
         ),
         files: [
-      { path: "components/navbar.tsx" },
-      { path: "components/logo.tsx" },
-      { path: "components/nav-menu.tsx" },
-      { path: "components/navigation-sheet.tsx" },
-      { path: "config/navbar.ts" },
-    ]
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+          { path: "components/nav-menu.tsx" },
+          { path: "components/navigation-sheet.tsx" },
+          { path: "config/navbar.ts" },
+        ],
       },
     },
     layout: NavbarLayout,
@@ -2218,22 +2381,22 @@ export const blocks: RegistryBlock[] = [
           () => import("@/registry/blocks/radix/navbar-04/components/navbar")
         ),
         files: [
-      { path: "components/navbar.tsx" },
-      { path: "components/logo.tsx" },
-      { path: "components/nav-menu.tsx" },
-      { path: "components/navigation-sheet.tsx" },
-    ]
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+          { path: "components/nav-menu.tsx" },
+          { path: "components/navigation-sheet.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/navbar-04/components/navbar")
         ),
         files: [
-      { path: "components/navbar.tsx" },
-      { path: "components/logo.tsx" },
-      { path: "components/nav-menu.tsx" },
-      { path: "components/navigation-sheet.tsx" },
-    ]
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+          { path: "components/nav-menu.tsx" },
+          { path: "components/navigation-sheet.tsx" },
+        ],
       },
     },
     layout: NavbarLayout,
@@ -2248,13 +2411,19 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/navbar-05/components/navbar")
         ),
-        files: [{ path: "components/navbar.tsx" }, { path: "components/logo.tsx" }],
+        files: [
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/navbar-05/components/navbar")
         ),
-        files: [{ path: "components/navbar.tsx" }, { path: "components/logo.tsx" }],
+        files: [
+          { path: "components/navbar.tsx" },
+          { path: "components/logo.tsx" },
+        ],
       },
     },
     layout: NavbarLayout,
@@ -2270,16 +2439,17 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/footer-01/components/footer")
         ),
-        files: [{ path: "components/footer.tsx" }]
+        files: [{ path: "components/footer.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/footer-01/components/footer")
         ),
-        files: [{ path: "components/footer.tsx" }]
+        files: [{ path: "components/footer.tsx" }],
       },
     },
     categories: [categories.footer],
+    layout: FooterLayout,
   },
   {
     name: "footer-02",
@@ -2290,16 +2460,17 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/footer-02/components/footer")
         ),
-        files: [{ path: "components/footer.tsx" }]
+        files: [{ path: "components/footer.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/footer-02/components/footer")
         ),
-        files: [{ path: "components/footer.tsx" }]
+        files: [{ path: "components/footer.tsx" }],
       },
     },
     categories: [categories.footer],
+    layout: FooterLayout,
   },
   {
     name: "footer-03",
@@ -2310,16 +2481,17 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/footer-03/components/footer")
         ),
-        files: [{ path: "components/footer.tsx" }]
+        files: [{ path: "components/footer.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/footer-03/components/footer")
         ),
-        files: [{ path: "components/footer.tsx" }]
+        files: [{ path: "components/footer.tsx" }],
       },
     },
     categories: [categories.footer],
+    layout: FooterLayout,
   },
   {
     name: "footer-04",
@@ -2330,16 +2502,17 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/footer-04/components/footer")
         ),
-        files: [{ path: "components/footer.tsx" }]
+        files: [{ path: "components/footer.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/footer-04/components/footer")
         ),
-        files: [{ path: "components/footer.tsx" }]
+        files: [{ path: "components/footer.tsx" }],
       },
     },
     categories: [categories.footer],
+    layout: FooterLayout,
   },
   {
     name: "footer-05",
@@ -2350,16 +2523,17 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/footer-05/components/footer")
         ),
-        files: [{ path: "components/footer.tsx" }]
+        files: [{ path: "components/footer.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/footer-05/components/footer")
         ),
-        files: [{ path: "components/footer.tsx" }]
+        files: [{ path: "components/footer.tsx" }],
       },
     },
     categories: [categories.footer],
+    layout: FooterLayout,
   },
   {
     name: "footer-06",
@@ -2389,7 +2563,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 01",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-01/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-01/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2402,7 +2577,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 02",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-02/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-02/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2415,7 +2591,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 03",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-03/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-03/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2428,7 +2605,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 04",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-04/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-04/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2441,7 +2619,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 05",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-05/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-05/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2456,7 +2635,10 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/logo-cloud-06/components/logo-cloud")
+          () =>
+            import(
+              "@/registry/blocks/radix/logo-cloud-06/components/logo-cloud"
+            )
         ),
         files: [
           { path: "components/logo-cloud.tsx" },
@@ -2466,7 +2648,8 @@ export const blocks: RegistryBlock[] = [
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/logo-cloud-06/components/logo-cloud")
+          () =>
+            import("@/registry/blocks/base/logo-cloud-06/components/logo-cloud")
         ),
         files: [
           { path: "components/logo-cloud.tsx" },
@@ -2484,7 +2667,10 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/logo-cloud-07/components/logo-cloud")
+          () =>
+            import(
+              "@/registry/blocks/radix/logo-cloud-07/components/logo-cloud"
+            )
         ),
         files: [
           { path: "components/logo-cloud.tsx" },
@@ -2494,7 +2680,8 @@ export const blocks: RegistryBlock[] = [
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/logo-cloud-07/components/logo-cloud")
+          () =>
+            import("@/registry/blocks/base/logo-cloud-07/components/logo-cloud")
         ),
         files: [
           { path: "components/logo-cloud.tsx" },
@@ -2510,7 +2697,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 08",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-08/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-08/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2523,7 +2711,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 09",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-09/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-09/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2536,7 +2725,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 10",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-10/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-10/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2550,7 +2740,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 11",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-11/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-11/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2563,7 +2754,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 12",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-12/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-12/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2576,7 +2768,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 13",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-13/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-13/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2590,7 +2783,8 @@ export const blocks: RegistryBlock[] = [
     title: "Logo Cloud 14",
     description: "A simple logo cloud block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/logo-cloud-14/components/logo-cloud")
+      () =>
+        import("@/registry/blocks/shared/logo-cloud-14/components/logo-cloud")
     ),
     categories: [categories.logoCloud],
     files: [
@@ -2605,7 +2799,10 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/logo-cloud-15/components/logo-cloud")
+          () =>
+            import(
+              "@/registry/blocks/radix/logo-cloud-15/components/logo-cloud"
+            )
         ),
         files: [
           { path: "components/logo-cloud.tsx" },
@@ -2616,7 +2813,8 @@ export const blocks: RegistryBlock[] = [
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/logo-cloud-15/components/logo-cloud")
+          () =>
+            import("@/registry/blocks/base/logo-cloud-15/components/logo-cloud")
         ),
         files: [
           { path: "components/logo-cloud.tsx" },
@@ -2769,13 +2967,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/contact-02/components/contact")
         ),
-        files: [{ path: "components/contact.tsx" }]
+        files: [{ path: "components/contact.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/contact-02/components/contact")
         ),
-        files: [{ path: "components/contact.tsx" }]
+        files: [{ path: "components/contact.tsx" }],
       },
     },
     categories: [categories.contact],
@@ -2798,7 +2996,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/timeline-01/components/timeline")
+          () =>
+            import("@/registry/blocks/radix/timeline-01/components/timeline")
         ),
         files: [{ path: "components/timeline.tsx" }],
       },
@@ -2818,7 +3017,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/timeline-02/components/timeline")
+          () =>
+            import("@/registry/blocks/radix/timeline-02/components/timeline")
         ),
         files: [{ path: "components/timeline.tsx" }],
       },
@@ -2838,7 +3038,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/timeline-03/components/timeline")
+          () =>
+            import("@/registry/blocks/radix/timeline-03/components/timeline")
         ),
         files: [{ path: "components/timeline.tsx" }],
       },
@@ -2858,7 +3059,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/timeline-04/components/timeline")
+          () =>
+            import("@/registry/blocks/radix/timeline-04/components/timeline")
         ),
         files: [{ path: "components/timeline.tsx" }],
       },
@@ -2909,13 +3111,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/carousel-block-01/components/carousel")
+          () =>
+            import(
+              "@/registry/blocks/radix/carousel-block-01/components/carousel"
+            )
         ),
         files: [{ path: "components/carousel.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/carousel-block-01/components/carousel")
+          () =>
+            import(
+              "@/registry/blocks/base/carousel-block-01/components/carousel"
+            )
         ),
         files: [{ path: "components/carousel.tsx" }],
       },
@@ -2929,13 +3137,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/carousel-block-02/components/carousel")
+          () =>
+            import(
+              "@/registry/blocks/radix/carousel-block-02/components/carousel"
+            )
         ),
         files: [{ path: "components/carousel.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/carousel-block-02/components/carousel")
+          () =>
+            import(
+              "@/registry/blocks/base/carousel-block-02/components/carousel"
+            )
         ),
         files: [{ path: "components/carousel.tsx" }],
       },
@@ -2950,15 +3164,17 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/changelog-01/components/changelog")
+          () =>
+            import("@/registry/blocks/radix/changelog-01/components/changelog")
         ),
-        files: [{ path: "components/changelog.tsx" }]
+        files: [{ path: "components/changelog.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/changelog-01/components/changelog")
+          () =>
+            import("@/registry/blocks/base/changelog-01/components/changelog")
         ),
-        files: [{ path: "components/changelog.tsx" }]
+        files: [{ path: "components/changelog.tsx" }],
       },
     },
     categories: [categories.changelog],
@@ -2970,15 +3186,17 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/changelog-02/components/changelog")
+          () =>
+            import("@/registry/blocks/radix/changelog-02/components/changelog")
         ),
-        files: [{ path: "components/changelog.tsx" }]
+        files: [{ path: "components/changelog.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/changelog-02/components/changelog")
+          () =>
+            import("@/registry/blocks/base/changelog-02/components/changelog")
         ),
-        files: [{ path: "components/changelog.tsx" }]
+        files: [{ path: "components/changelog.tsx" }],
       },
     },
     categories: [categories.changelog],
@@ -2990,15 +3208,17 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/changelog-03/components/changelog")
+          () =>
+            import("@/registry/blocks/radix/changelog-03/components/changelog")
         ),
-        files: [{ path: "components/changelog.tsx" }]
+        files: [{ path: "components/changelog.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/changelog-03/components/changelog")
+          () =>
+            import("@/registry/blocks/base/changelog-03/components/changelog")
         ),
-        files: [{ path: "components/changelog.tsx" }]
+        files: [{ path: "components/changelog.tsx" }],
       },
     },
     categories: [categories.changelog],
@@ -3009,7 +3229,8 @@ export const blocks: RegistryBlock[] = [
     title: "Code Block 01",
     description: "A simple code block",
     component: React.lazy(
-      () => import("@/registry/blocks/shared/code-block-01/components/code-block")
+      () =>
+        import("@/registry/blocks/shared/code-block-01/components/code-block")
     ),
     categories: [categories.codeBlock],
     files: [{ path: "components/code-block.tsx" }],
@@ -3021,7 +3242,10 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/code-block-02/components/code-block")
+          () =>
+            import(
+              "@/registry/blocks/radix/code-block-02/components/code-block"
+            )
         ),
         files: [
           { path: "components/code-block.tsx" },
@@ -3031,7 +3255,8 @@ export const blocks: RegistryBlock[] = [
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/code-block-02/components/code-block")
+          () =>
+            import("@/registry/blocks/base/code-block-02/components/code-block")
         ),
         files: [
           { path: "components/code-block.tsx" },
@@ -3049,15 +3274,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/code-block-03/components/code-block")
+          () =>
+            import(
+              "@/registry/blocks/radix/code-block-03/components/code-block"
+            )
         ),
-        files: [{ path: "components/code-block.tsx" }]
+        files: [{ path: "components/code-block.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/code-block-03/components/code-block")
+          () =>
+            import("@/registry/blocks/base/code-block-03/components/code-block")
         ),
-        files: [{ path: "components/code-block.tsx" }]
+        files: [{ path: "components/code-block.tsx" }],
       },
     },
     categories: [categories.codeBlock],
@@ -3070,13 +3299,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/empty-state-01/components/empty-state")
+          () =>
+            import(
+              "@/registry/blocks/radix/empty-state-01/components/empty-state"
+            )
         ),
         files: [{ path: "components/empty-state.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/empty-state-01/components/empty-state")
+          () =>
+            import(
+              "@/registry/blocks/base/empty-state-01/components/empty-state"
+            )
         ),
         files: [{ path: "components/empty-state.tsx" }],
       },
@@ -3090,13 +3325,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/empty-state-02/components/empty-state")
+          () =>
+            import(
+              "@/registry/blocks/radix/empty-state-02/components/empty-state"
+            )
         ),
         files: [{ path: "components/empty-state.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/empty-state-02/components/empty-state")
+          () =>
+            import(
+              "@/registry/blocks/base/empty-state-02/components/empty-state"
+            )
         ),
         files: [{ path: "components/empty-state.tsx" }],
       },
@@ -3110,15 +3351,21 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/empty-state-03/components/empty-state")
+          () =>
+            import(
+              "@/registry/blocks/radix/empty-state-03/components/empty-state"
+            )
         ),
-        files: [{ path: "components/empty-state.tsx" }]
+        files: [{ path: "components/empty-state.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/empty-state-03/components/empty-state")
+          () =>
+            import(
+              "@/registry/blocks/base/empty-state-03/components/empty-state"
+            )
         ),
-        files: [{ path: "components/empty-state.tsx" }]
+        files: [{ path: "components/empty-state.tsx" }],
       },
     },
     categories: [categories.emptyState],
@@ -3130,7 +3377,10 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/empty-state-04/components/empty-state")
+          () =>
+            import(
+              "@/registry/blocks/radix/empty-state-04/components/empty-state"
+            )
         ),
         files: [
           { path: "components/empty-state.tsx" },
@@ -3139,7 +3389,10 @@ export const blocks: RegistryBlock[] = [
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/empty-state-04/components/empty-state")
+          () =>
+            import(
+              "@/registry/blocks/base/empty-state-04/components/empty-state"
+            )
         ),
         files: [
           { path: "components/empty-state.tsx" },
@@ -3157,13 +3410,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/invite-member-01/components/invite-member")
+          () =>
+            import(
+              "@/registry/blocks/radix/invite-member-01/components/invite-member"
+            )
         ),
         files: [{ path: "components/invite-member.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/invite-member-01/components/invite-member")
+          () =>
+            import(
+              "@/registry/blocks/base/invite-member-01/components/invite-member"
+            )
         ),
         files: [{ path: "components/invite-member.tsx" }],
       },
@@ -3180,13 +3439,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/invite-member-02/components/invite-member")
+          () =>
+            import(
+              "@/registry/blocks/radix/invite-member-02/components/invite-member"
+            )
         ),
         files: [{ path: "components/invite-member.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/invite-member-02/components/invite-member")
+          () =>
+            import(
+              "@/registry/blocks/base/invite-member-02/components/invite-member"
+            )
         ),
         files: [{ path: "components/invite-member.tsx" }],
       },
@@ -3203,13 +3468,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/invite-member-03/components/invite-member")
+          () =>
+            import(
+              "@/registry/blocks/radix/invite-member-03/components/invite-member"
+            )
         ),
         files: [{ path: "components/invite-member.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/invite-member-03/components/invite-member")
+          () =>
+            import(
+              "@/registry/blocks/base/invite-member-03/components/invite-member"
+            )
         ),
         files: [{ path: "components/invite-member.tsx" }],
       },
@@ -3227,13 +3498,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/keyboard-shortcuts-01/components/keyboard-shortcuts")
+          () =>
+            import(
+              "@/registry/blocks/radix/keyboard-shortcuts-01/components/keyboard-shortcuts"
+            )
         ),
         files: [{ path: "components/keyboard-shortcuts.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/keyboard-shortcuts-01/components/keyboard-shortcuts")
+          () =>
+            import(
+              "@/registry/blocks/base/keyboard-shortcuts-01/components/keyboard-shortcuts"
+            )
         ),
         files: [{ path: "components/keyboard-shortcuts.tsx" }],
       },
@@ -3247,13 +3524,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/keyboard-shortcuts-02/components/keyboard-shortcuts")
+          () =>
+            import(
+              "@/registry/blocks/radix/keyboard-shortcuts-02/components/keyboard-shortcuts"
+            )
         ),
         files: [{ path: "components/keyboard-shortcuts.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/keyboard-shortcuts-02/components/keyboard-shortcuts")
+          () =>
+            import(
+              "@/registry/blocks/base/keyboard-shortcuts-02/components/keyboard-shortcuts"
+            )
         ),
         files: [{ path: "components/keyboard-shortcuts.tsx" }],
       },
@@ -3267,13 +3550,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/keyboard-shortcuts-03/components/keyboard-shortcuts")
+          () =>
+            import(
+              "@/registry/blocks/radix/keyboard-shortcuts-03/components/keyboard-shortcuts"
+            )
         ),
         files: [{ path: "components/keyboard-shortcuts.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/keyboard-shortcuts-03/components/keyboard-shortcuts")
+          () =>
+            import(
+              "@/registry/blocks/base/keyboard-shortcuts-03/components/keyboard-shortcuts"
+            )
         ),
         files: [{ path: "components/keyboard-shortcuts.tsx" }],
       },
@@ -3287,13 +3576,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/keyboard-shortcuts-04/components/keyboard-shortcuts")
+          () =>
+            import(
+              "@/registry/blocks/radix/keyboard-shortcuts-04/components/keyboard-shortcuts"
+            )
         ),
         files: [{ path: "components/keyboard-shortcuts.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/keyboard-shortcuts-04/components/keyboard-shortcuts")
+          () =>
+            import(
+              "@/registry/blocks/base/keyboard-shortcuts-04/components/keyboard-shortcuts"
+            )
         ),
         files: [{ path: "components/keyboard-shortcuts.tsx" }],
       },
@@ -3310,13 +3605,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/members-01/components/members")
         ),
-        files: [{ path: "components/members.tsx" }]
+        files: [{ path: "components/members.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/members-01/components/members")
         ),
-        files: [{ path: "components/members.tsx" }]
+        files: [{ path: "components/members.tsx" }],
       },
     },
     categories: [categories.members],
@@ -3330,13 +3625,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/members-02/components/members")
         ),
-        files: [{ path: "components/members.tsx" }]
+        files: [{ path: "components/members.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/members-02/components/members")
         ),
-        files: [{ path: "components/members.tsx" }]
+        files: [{ path: "components/members.tsx" }],
       },
     },
     categories: [categories.members],
@@ -3369,13 +3664,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/order-confirmation-01/components/order-confirmation")
+          () =>
+            import(
+              "@/registry/blocks/radix/order-confirmation-01/components/order-confirmation"
+            )
         ),
         files: [{ path: "components/order-confirmation.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/order-confirmation-01/components/order-confirmation")
+          () =>
+            import(
+              "@/registry/blocks/base/order-confirmation-01/components/order-confirmation"
+            )
         ),
         files: [{ path: "components/order-confirmation.tsx" }],
       },
@@ -3389,13 +3690,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/order-confirmation-02/components/order-confirmation")
+          () =>
+            import(
+              "@/registry/blocks/radix/order-confirmation-02/components/order-confirmation"
+            )
         ),
         files: [{ path: "components/order-confirmation.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/order-confirmation-02/components/order-confirmation")
+          () =>
+            import(
+              "@/registry/blocks/base/order-confirmation-02/components/order-confirmation"
+            )
         ),
         files: [{ path: "components/order-confirmation.tsx" }],
       },
@@ -3412,13 +3719,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/profile-01/components/profile")
         ),
-        files: [{ path: "components/profile.tsx" }]
+        files: [{ path: "components/profile.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/profile-01/components/profile")
         ),
-        files: [{ path: "components/profile.tsx" }]
+        files: [{ path: "components/profile.tsx" }],
       },
     },
     categories: [categories.profile],
@@ -3432,13 +3739,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/profile-02/components/profile")
         ),
-        files: [{ path: "components/profile.tsx" }]
+        files: [{ path: "components/profile.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/profile-02/components/profile")
         ),
-        files: [{ path: "components/profile.tsx" }]
+        files: [{ path: "components/profile.tsx" }],
       },
     },
     categories: [categories.profile],
@@ -3452,13 +3759,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/profile-03/components/profile")
         ),
-        files: [{ path: "components/profile.tsx" }]
+        files: [{ path: "components/profile.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/profile-03/components/profile")
         ),
-        files: [{ path: "components/profile.tsx" }]
+        files: [{ path: "components/profile.tsx" }],
       },
     },
     categories: [categories.profile],
@@ -3472,13 +3779,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/profile-04/components/profile")
         ),
-        files: [{ path: "components/profile.tsx" }]
+        files: [{ path: "components/profile.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/profile-04/components/profile")
         ),
-        files: [{ path: "components/profile.tsx" }]
+        files: [{ path: "components/profile.tsx" }],
       },
     },
     categories: [categories.profile],
@@ -3491,13 +3798,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/setup-guide-01/components/setup-guide")
+          () =>
+            import(
+              "@/registry/blocks/radix/setup-guide-01/components/setup-guide"
+            )
         ),
         files: [{ path: "components/setup-guide.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/setup-guide-01/components/setup-guide")
+          () =>
+            import(
+              "@/registry/blocks/base/setup-guide-01/components/setup-guide"
+            )
         ),
         files: [{ path: "components/setup-guide.tsx" }],
       },
@@ -3511,15 +3824,21 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/setup-guide-02/components/setup-guide")
+          () =>
+            import(
+              "@/registry/blocks/radix/setup-guide-02/components/setup-guide"
+            )
         ),
-        files: [{ path: "components/setup-guide.tsx" }]
+        files: [{ path: "components/setup-guide.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/setup-guide-02/components/setup-guide")
+          () =>
+            import(
+              "@/registry/blocks/base/setup-guide-02/components/setup-guide"
+            )
         ),
-        files: [{ path: "components/setup-guide.tsx" }]
+        files: [{ path: "components/setup-guide.tsx" }],
       },
     },
     categories: [categories.setupGuide],
@@ -3531,13 +3850,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/setup-guide-03/components/setup-guide")
+          () =>
+            import(
+              "@/registry/blocks/radix/setup-guide-03/components/setup-guide"
+            )
         ),
         files: [{ path: "components/setup-guide.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/setup-guide-03/components/setup-guide")
+          () =>
+            import(
+              "@/registry/blocks/base/setup-guide-03/components/setup-guide"
+            )
         ),
         files: [{ path: "components/setup-guide.tsx" }],
       },
@@ -3551,13 +3876,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/setup-guide-04/components/setup-guide")
+          () =>
+            import(
+              "@/registry/blocks/radix/setup-guide-04/components/setup-guide"
+            )
         ),
         files: [{ path: "components/setup-guide.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/setup-guide-04/components/setup-guide")
+          () =>
+            import(
+              "@/registry/blocks/base/setup-guide-04/components/setup-guide"
+            )
         ),
         files: [{ path: "components/setup-guide.tsx" }],
       },
@@ -3572,13 +3903,19 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/verification-01/components/verification")
+          () =>
+            import(
+              "@/registry/blocks/radix/verification-01/components/verification"
+            )
         ),
         files: [{ path: "components/verification.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/verification-01/components/verification")
+          () =>
+            import(
+              "@/registry/blocks/base/verification-01/components/verification"
+            )
         ),
         files: [{ path: "components/verification.tsx" }],
       },
@@ -3666,13 +4003,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/blog-01/components/blog")
         ),
-        files: [{ path: "components/blog.tsx" }]
+        files: [{ path: "components/blog.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/blog-01/components/blog")
         ),
-        files: [{ path: "components/blog.tsx" }]
+        files: [{ path: "components/blog.tsx" }],
       },
     },
     categories: [categories.blog],
@@ -3686,13 +4023,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/blog-02/components/blog")
         ),
-        files: [{ path: "components/blog.tsx" }]
+        files: [{ path: "components/blog.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/blog-02/components/blog")
         ),
-        files: [{ path: "components/blog.tsx" }]
+        files: [{ path: "components/blog.tsx" }],
       },
     },
     categories: [categories.blog],
@@ -3726,13 +4063,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/blog-04/components/blog")
         ),
-        files: [{ path: "components/blog.tsx" }]
+        files: [{ path: "components/blog.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/blog-04/components/blog")
         ),
-        files: [{ path: "components/blog.tsx" }]
+        files: [{ path: "components/blog.tsx" }],
       },
     },
     categories: [categories.blog],
@@ -3746,13 +4083,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/blog-05/components/blog")
         ),
-        files: [{ path: "components/blog.tsx" }]
+        files: [{ path: "components/blog.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/blog-05/components/blog")
         ),
-        files: [{ path: "components/blog.tsx" }]
+        files: [{ path: "components/blog.tsx" }],
       },
     },
     categories: [categories.blog],
@@ -3766,13 +4103,13 @@ export const blocks: RegistryBlock[] = [
         component: React.lazy(
           () => import("@/registry/blocks/radix/blog-06/components/blog")
         ),
-        files: [{ path: "components/blog.tsx" }]
+        files: [{ path: "components/blog.tsx" }],
       },
       base: {
         component: React.lazy(
           () => import("@/registry/blocks/base/blog-06/components/blog")
         ),
-        files: [{ path: "components/blog.tsx" }]
+        files: [{ path: "components/blog.tsx" }],
       },
     },
     categories: [categories.blog],
@@ -3785,13 +4122,15 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/not-found-01/components/not-found")
+          () =>
+            import("@/registry/blocks/radix/not-found-01/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/not-found-01/components/not-found")
+          () =>
+            import("@/registry/blocks/base/not-found-01/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
@@ -3806,13 +4145,15 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/not-found-02/components/not-found")
+          () =>
+            import("@/registry/blocks/radix/not-found-02/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/not-found-02/components/not-found")
+          () =>
+            import("@/registry/blocks/base/not-found-02/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
@@ -3826,13 +4167,15 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/not-found-03/components/not-found")
+          () =>
+            import("@/registry/blocks/radix/not-found-03/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/not-found-03/components/not-found")
+          () =>
+            import("@/registry/blocks/base/not-found-03/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
@@ -3846,13 +4189,15 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/not-found-04/components/not-found")
+          () =>
+            import("@/registry/blocks/radix/not-found-04/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/not-found-04/components/not-found")
+          () =>
+            import("@/registry/blocks/base/not-found-04/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
@@ -3866,13 +4211,15 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/not-found-05/components/not-found")
+          () =>
+            import("@/registry/blocks/radix/not-found-05/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/not-found-05/components/not-found")
+          () =>
+            import("@/registry/blocks/base/not-found-05/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
@@ -3886,13 +4233,15 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/not-found-06/components/not-found")
+          () =>
+            import("@/registry/blocks/radix/not-found-06/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/not-found-06/components/not-found")
+          () =>
+            import("@/registry/blocks/base/not-found-06/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
@@ -3906,7 +4255,8 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/not-found-07/components/not-found")
+          () =>
+            import("@/registry/blocks/radix/not-found-07/components/not-found")
         ),
         files: [
           { path: "components/not-found.tsx" },
@@ -3915,7 +4265,8 @@ export const blocks: RegistryBlock[] = [
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/not-found-07/components/not-found")
+          () =>
+            import("@/registry/blocks/base/not-found-07/components/not-found")
         ),
         files: [
           { path: "components/not-found.tsx" },
@@ -3932,13 +4283,15 @@ export const blocks: RegistryBlock[] = [
     primitives: {
       radix: {
         component: React.lazy(
-          () => import("@/registry/blocks/radix/not-found-08/components/not-found")
+          () =>
+            import("@/registry/blocks/radix/not-found-08/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
       base: {
         component: React.lazy(
-          () => import("@/registry/blocks/base/not-found-08/components/not-found")
+          () =>
+            import("@/registry/blocks/base/not-found-08/components/not-found")
         ),
         files: [{ path: "components/not-found.tsx" }],
       },
