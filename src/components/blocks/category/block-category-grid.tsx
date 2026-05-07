@@ -665,7 +665,10 @@ const CategoryCard = ({
 
       <div className="flex items-center justify-between border-t px-4 py-3">
         <span className="font-medium text-sm">{title}</span>
-        <Badge className="shrink-0 text-xs tabular-nums" variant="secondary">
+        <Badge
+          className="shrink-0 text-muted-foreground text-xs tabular-nums"
+          variant="secondary"
+        >
           {totalBlocks} {totalBlocks === 1 ? "block" : "blocks"}
         </Badge>
       </div>
