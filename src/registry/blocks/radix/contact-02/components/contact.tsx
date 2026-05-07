@@ -14,7 +14,7 @@ import { Label } from "@/registry/bases/radix/ui/label";
 import { Textarea } from "@/registry/bases/radix/ui/textarea";
 
 const Contact = () => (
-  <div className="flex min-h-screen items-center justify-center py-16">
+  <div className="py-20">
     <div className="mx-auto w-full max-w-(--breakpoint-xl) px-6 xl:px-0">
       <b className="font-medium text-muted-foreground text-sm uppercase tracking-wide">
         Contact Us
