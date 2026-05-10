@@ -1,3 +1,5 @@
+export const CARBON_AD_HIDDEN_KEY = "carbonAdHidden";
+
 declare global {
   interface Window {
     _carbonads: {

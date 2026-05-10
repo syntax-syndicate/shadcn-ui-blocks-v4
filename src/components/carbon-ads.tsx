@@ -1,19 +1,27 @@
 "use client";
 
+import { X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { type HTMLAttributes, useEffect, useRef } from "react";
-import { refreshCarbonAd } from "@/lib/carbon-ad";
+import { type HTMLAttributes, useEffect, useRef, useState } from "react";
+import { CARBON_AD_HIDDEN_KEY, refreshCarbonAd } from "@/lib/carbon-ad";
+import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
 
 export default function CarbonAd({
   className,
   ...props
 }: HTMLAttributes<HTMLDivElement>) {
+  const [isVisible, setIsVisible] = useState(true);
   const mounted = useRef(false);
   const reference = useRef<HTMLDivElement | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!reference.current) return;
+    setIsVisible(sessionStorage.getItem(CARBON_AD_HIDDEN_KEY) !== "true");
+  }, []);
+
+  useEffect(() => {
+    if (!(reference.current && isVisible)) return;
 
     reference.current.innerHTML = "";
     const s = document.createElement("script");
@@ -29,5 +37,22 @@ export default function CarbonAd({
     mounted.current = true;
   }, [pathname]);
 
-  return <div className={className} ref={reference} {...props} />;
+  if (process.env.NODE_ENV === "development") return null;
+
+  return (
+    <div className={cn("z-10", className, { hidden: !isVisible })}>
+      <div ref={reference} {...props} />
+      <Button
+        className="absolute top-1.5 right-1.5 z-10"
+        onClick={() => {
+          sessionStorage.setItem(CARBON_AD_HIDDEN_KEY, "true");
+          setIsVisible(false);
+        }}
+        size="icon-sm"
+        variant="secondary"
+      >
+        <X />
+      </Button>
+    </div>
+  );
 }

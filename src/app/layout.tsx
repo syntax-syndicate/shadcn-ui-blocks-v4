@@ -6,6 +6,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import type { WebSite, WithContext } from "schema-dts";
 import { ThemeToggle } from "@/components/app-sidebar/theme-toggle";
+import { CarbonAdTracker } from "@/components/carbon-ad-tracker";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { PackageManagerProvider } from "@/providers/package-manager-provider";
@@ -147,6 +148,7 @@ export default function RootLayout({
           type="application/ld+json"
         />
 
+        <CarbonAdTracker />
         <CSPostHogProvider>
           <ThemeProvider attribute="class">
             <TooltipProvider>

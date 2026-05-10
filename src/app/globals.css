@@ -180,16 +180,16 @@
 
 /* Components page sidebar carbon ad */
 #carbonads {
-  @apply hidden md:block group-data-[state=collapsed]:hidden z-20 w-fit bg-neutral-50 border-t py-4 text-center;
+  @apply hidden max-w-60 rounded-lg md:block group-data-[state=collapsed]:hidden border border-muted-foreground/10 w-fit bg-muted p-4 text-center;
 }
 #carbonads .carbon-wrap img {
-  @apply flex-col w-fit max-w-80 border-none rounded-lg mx-auto mb-4;
+  @apply flex-col w-fit max-w-25  border-none rounded-lg mx-auto mb-4;
 }
 #carbonads .carbon-text {
   @apply basis-auto text-center text-xs font-medium leading-tight inline-block;
 }
 #carbonads .carbon-poweredby {
-  @apply text-center mt-2 uppercase font-medium text-xs block text-muted-foreground;
+  @apply text-center mt-2 uppercase font-medium text-[10px] block text-muted-foreground;
 }
 
 @layer components {

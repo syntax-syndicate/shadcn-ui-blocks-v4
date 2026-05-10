@@ -12,8 +12,7 @@ export const ThemeToggle = ({
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
   const pathname = usePathname();
-  const isBlockPreviewPage =
-    pathname.startsWith("/blocks") && pathname.endsWith("/preview");
+  const isBlocksPage = pathname.startsWith("/blocks");
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
@@ -23,7 +22,7 @@ export const ThemeToggle = ({
     setMounted(true);
   }, []);
 
-  if (isBlockPreviewPage) {
+  if (isBlocksPage) {
     return null;
   }
 
